@@ -1,33 +1,6 @@
-<?php ini_set('display_errors', 0);?>
-<!DOCTYPE html>
-<html lang="ja">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="キーワードでサイトを説明">
-    <meta name="description" content="どんなサイトか短い文章で説明">
-    <title>サイトのタイトル</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" media="screen and ( min-width:769px )" href="<?php  echo get_template_directory_uri(); ?>/css/style_pc.css">
-	<link rel="stylesheet" type="text/css" media="screen and ( max-width:768px )" href="<?php  echo get_template_directory_uri(); ?>/css/style_sp.css">
-
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<!-- drawer.css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
-<!-- jquery & iScroll -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
-<!-- drawer.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
-<!-- <script type="text/javascript" src="js/jquery.fadethis.min.js"></script> -->
-
-<script type="text/javascript" src="js/common.js"></script>
-<link rel="stylesheet" type="text/css" media="screen and ( min-width:769px )" href="./css/style_pc.css">
-<link rel="stylesheet" type="text/css" media="screen and ( max-width:768px )" href="./css/style_sp.css">
-
-    </head>
+    <?php get_header(); ?>
 
 <body  class="drawer drawer--right">
     <header>
@@ -144,8 +117,8 @@ echo "今日は".date("Y/m/d").$week[$w]."です";
                         <img src="<?php  echo get_template_directory_uri(); ?>/img/thumb_01.png" alt="ブログ1サムネイル">
                         <div class="blog-info">
                             <h2><?php the_title(); ?></h2>
-                            <p><?php the_content(); ?></p>
-                        <a href="#">カテゴリ名</a><a href="#">2019.07.25</a>
+                            <p><?php the_excerpt(); ?></p>
+                        <a href="#"><?php the_tags(); ?></a><a href="#"><?php the_date(); ?></a>
                         </div>
                 </div>
 
@@ -194,9 +167,4 @@ echo "今日は".date("Y/m/d").$week[$w]."です";
 
     <button id="pagetop"><a href="#"> page top</a></button>
 
-    <footer>
-        <p class="copyright">Copyright &copy; DEMO all rights reserved.</p>
-    </footer>
-</body>
-
-</html>
+    <?php get_footer(); ?>
