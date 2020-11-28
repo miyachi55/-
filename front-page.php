@@ -114,7 +114,7 @@ echo "今日は".date("Y/m/d").$week[$w]."です";
                 <?php while (have_posts()) : the_post(); ?>
                 コンテンツを表示
                 <div class="blog-content" >
-                        <img src="<?php  echo get_template_directory_uri(); ?>/img/thumb_01.png" alt="ブログ1サムネイル">
+                        <?php the_post_thumbnail( 'medium' ); ?>
                         <div class="blog-info">
                             <h2><?php the_title(); ?></h2>
                             <p><?php the_excerpt(); ?></p>
